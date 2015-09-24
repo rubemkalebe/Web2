@@ -1,3 +1,7 @@
+package system.control;
+
+import system.data.DBSimulator;
+import system.model.User;
 
 public class VerifyUser {
 
@@ -5,10 +9,10 @@ public class VerifyUser {
 	
 	public VerifyUser() {
 		// TODO Auto-generated constructor stub
-		simulator = new DBSimulator();
+		simulator = DBSimulator.getInstance();
 	}
 	
-	public boolean ok(User u) {
+	public User ok(User u) {
 		return simulator.checkUser(u);
 	}
 

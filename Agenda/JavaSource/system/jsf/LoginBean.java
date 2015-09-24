@@ -1,5 +1,9 @@
+package system.jsf;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+
+import system.control.VerifyUser;
+import system.model.User;
 
 @ManagedBean
 @SessionScoped
@@ -18,7 +22,7 @@ public class LoginBean {
 	
 	public String authenticate() {
 		VerifyUser v = new VerifyUser();
-		if(v.ok(user)) {
+		if((user = v.ok(user)) != null) {
 			return "/pages/home";
 		} else {
 			return "/pages/loginError";

@@ -1,9 +1,12 @@
+package system.model;
+
+import phonebook.model.Phonebook;
 
 public class User {
 
-	private String userName;
+	private String username;
 	private String password;
-	private ContactList list;
+	private Phonebook phonebook;
 	
 	public User() {
 		// TODO Auto-generated constructor stub
@@ -15,23 +18,15 @@ public class User {
 	}
 	
 	public void init() {
-		userName = "";
+		username = "";
 		password = "";
-		list = new ContactList();
+		phonebook = new Phonebook();
 	}
 	
 	public void init(String userName, String password) {
-		this.userName = userName;
+		this.username = userName;
 		this.password = password;
-		list = new ContactList();
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
+		phonebook = new Phonebook();
 	}
 
 	public String getPassword() {
@@ -42,19 +37,28 @@ public class User {
 		this.password = password;
 	}
 
-	public ContactList getList() {
-		return list;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setList(ContactList list) {
-		this.list = list;
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public Phonebook getPhonebook() {
+		return phonebook;
+	}
+
+	public void setPhonebook(Phonebook phonebook) {
+		this.phonebook = phonebook;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
 		// TODO Auto-generated method stub
 		User u = (User) obj;
-		if(userName.equals(u.getUserName()) && password.equals(u.getPassword())) {
+		if(username.equals(u.getUsername()) &&
+				password.equals(u.getPassword())) {
 			return true;
 		} else {
 			return false;

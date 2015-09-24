@@ -3,7 +3,22 @@
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
  <managed-bean>
   <managed-bean-name>loginBean</managed-bean-name>
-  <managed-bean-class>LoginBean</managed-bean-class>
+  <managed-bean-class>system.jsf.LoginBean</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+ <managed-bean>
+  <managed-bean-name>phonebookBean</managed-bean-name>
+  <managed-bean-class>phonebook.jsf.PhonebookBean</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+ <managed-bean>
+  <managed-bean-name>contactBean</managed-bean-name>
+  <managed-bean-class>phonebook.jsf.ContactBean</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+ <managed-bean>
+  <managed-bean-name>systemBean</managed-bean-name>
+  <managed-bean-class>system.jsf.SystemBean</managed-bean-class>
   <managed-bean-scope>session</managed-bean-scope>
  </managed-bean>
  <application/>
