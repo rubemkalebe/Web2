@@ -13,15 +13,15 @@
 		<h:form>
 			<h:panelGrid>
 				<h:outputLabel value="Nome" for="name" />
-				<h:inputText value="#{phonebookBean.contact.name}" pt:placeholder="Nome" id="name" />
+				<h:inputText value="#{systemBean.contact.name}" pt:placeholder="Nome" id="name" />
 
 				<h:outputLabel value="Telefone" for="phone" />
-				<h:inputText value="#{phonebookBean.contact.phone}" pt:placeholder="Telefone" id="phone" />
+				<h:inputText value="#{systemBean.contact.phone}" pt:placeholder="Telefone" id="phone" />
 
 				<h:outputLabel value="E-mail" for="email" />
-				<h:inputText value="#{phonebookBean.contact.email}" pt:placeholder="E-mail" id="email" />
+				<h:inputText value="#{systemBean.contact.email}" pt:placeholder="E-mail" id="email" />
 
-				<h:commandButton value="Editar" action="#{phonebookBean.edit(systemBean.user, systemBean.contact)}" />
+				<h:commandButton value="Editar" action="#{phonebookBean.edit(systemBean.user, systemBean.oldContact, systemBean.contact)}" />
 			</h:panelGrid>
 		</h:form>
 	</body>

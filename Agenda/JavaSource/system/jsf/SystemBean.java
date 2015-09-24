@@ -2,8 +2,6 @@ package system.jsf;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
-import javax.servlet.http.HttpSession;
 
 import phonebook.model.Contact;
 import system.control.AddUser;
@@ -35,7 +33,7 @@ public class SystemBean {
 	
 	public String editContact(User u, Contact c) {
 		user = u;
-		contact = new Contact();
+		contact = c;
 		setOldContact(c);
 		return "/pages/editContact";
 	}
@@ -49,13 +47,6 @@ public class SystemBean {
 	public String addUser() {
 		AddUser au = new AddUser();
 		au.add(user);
-		return "/index";
-	}
-	
-	public String logout() {
-		FacesContext fc = FacesContext.getCurrentInstance();
-		HttpSession session = (HttpSession) fc.getExternalContext().getSession(false);
-		session.invalidate();
 		return "/index";
 	}
 

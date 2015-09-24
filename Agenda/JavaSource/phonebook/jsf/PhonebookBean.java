@@ -22,7 +22,7 @@ public class PhonebookBean {
 		return "/pages/home";
 	}
 	
-	public String edit(User u, Contact old) {
+	public String edit(User u, Contact old, Contact contact) {
 		int i = 0;
 		for(Contact c : u.getPhonebook().getContacts()) {
 			if(c.equals(old)) {
