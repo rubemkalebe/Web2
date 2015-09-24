@@ -48,7 +48,7 @@ public class LoginBean {
 	
 	public String createNewUser() {
 		init();
-		return "/pages/newUser";
+		return "/newUser";
 	}
 	
 
