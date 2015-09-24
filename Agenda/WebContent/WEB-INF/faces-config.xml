@@ -12,11 +12,6 @@
   <managed-bean-scope>session</managed-bean-scope>
  </managed-bean>
  <managed-bean>
-  <managed-bean-name>contactBean</managed-bean-name>
-  <managed-bean-class>phonebook.jsf.ContactBean</managed-bean-class>
-  <managed-bean-scope>session</managed-bean-scope>
- </managed-bean>
- <managed-bean>
   <managed-bean-name>systemBean</managed-bean-name>
   <managed-bean-class>system.jsf.SystemBean</managed-bean-class>
   <managed-bean-scope>session</managed-bean-scope>

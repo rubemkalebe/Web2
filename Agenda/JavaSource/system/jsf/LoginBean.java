@@ -25,12 +25,18 @@ public class LoginBean {
 		if((user = v.ok(user)) != null) {
 			return "/pages/home";
 		} else {
-			return "/pages/loginError";
+			return "/loginError";
 		}
 	}
 	
 	public String tryAgain() {
+		init();
 		return "/index";
+	}
+	
+	public String createNewUser() {
+		init();
+		return "/pages/newUser";
 	}
 	
 

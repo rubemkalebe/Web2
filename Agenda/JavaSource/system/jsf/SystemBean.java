@@ -1,17 +1,27 @@
 package system.jsf;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
+
 import phonebook.model.Contact;
+import system.control.AddUser;
 import system.model.User;
 
+@ManagedBean
+@SessionScoped
 public class SystemBean {
 
 	private User user;
 	private Contact contact;
+	private Contact oldContact;
 	
 	public SystemBean() {
 		// TODO Auto-generated constructor stub
 		user = new User();
 		contact = new Contact();
+		setOldContact(new Contact());
 	}
 	
 	public String goHome() {
@@ -25,7 +35,8 @@ public class SystemBean {
 	
 	public String editContact(User u, Contact c) {
 		user = u;
-		contact = c;
+		contact = new Contact();
+		setOldContact(c);
 		return "/pages/editContact";
 	}
 	
@@ -33,6 +44,19 @@ public class SystemBean {
 		user = u;
 		contact = c;
 		return "/pages/confirmRemove";
+	}
+	
+	public String addUser() {
+		AddUser au = new AddUser();
+		au.add(user);
+		return "/index";
+	}
+	
+	public String logout() {
+		FacesContext fc = FacesContext.getCurrentInstance();
+		HttpSession session = (HttpSession) fc.getExternalContext().getSession(false);
+		session.invalidate();
+		return "/index";
 	}
 
 	public User getUser() {
@@ -49,6 +73,14 @@ public class SystemBean {
 
 	public void setContact(Contact contact) {
 		this.contact = contact;
+	}
+
+	public Contact getOldContact() {
+		return oldContact;
+	}
+
+	public void setOldContact(Contact oldContact) {
+		this.oldContact = oldContact;
 	}
 
 }

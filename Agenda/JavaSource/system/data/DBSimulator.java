@@ -43,6 +43,10 @@ public class DBSimulator {
 			}
 		}
 		return null;
-	}	
+	}
+	
+	public void addUser(User u) {
+		users.add(u);
+	}
 
 }

@@ -27,7 +27,8 @@
 				<h:commandButton action="#{systemBean.removeContact(loginBean.user, item)}" value="Remover" />
 			</h:column>
 		</h:dataTable>
-		<h:commandButton action="#{systemBean.addContact(loginBean.user)}" value="Cadastrar contato" />
+		<h:commandButton action="#{systemBean.addContact(loginBean.user)}" value="Cadastrar contato" /> <br />
+		<h:commandButton action="#{systemBean.logout}" value="Sair" />
 	</h:form>
 </body>
 </html>
